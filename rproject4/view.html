@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 상세 정보</title>
+    <link rel="stylesheet" type="text/css" href="my.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        #postDetails {
+            margin: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>게시물 상세 정보</h2>
+    <div id="postDetails">
+        <p>
+            <strong>이름:</strong> 박 승종<br>
+            <strong>음료:</strong> 블랙 밀크티<br>
+            <strong>당도:</strong> 45%<br>
+            <strong>펄:</strong> 밀크폼펄<br>
+        </p>
+    </div>
+    <button id="editButton">Edit</button>
+    <button id="deleteButton">Delete</button>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const index = urlParams.get("index");
+        
+        const editButton = document.getElementById("editButton");
+        editButton.addEventListener("click", function() {
+            window.location.href = `edit.html?index=${index}`;
+        });
+
+        const deleteButton = document.getElementById("deleteButton");
+        deleteButton.addEventListener("click", function() {
+            const confirmDelete = confirm("게시물을 삭제할까요?");
+            if (confirmDelete) {
+                alert("게시물이 삭제되었습니다.");
+            }
+        });
+    </script>
+</body>
+</html>

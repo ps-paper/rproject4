@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공차 주문 리스트</title>
+    <link rel="stylesheet" type="text/css" href="my.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #postList {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .post {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .post p {
+            margin: 0;
+        }
+
+        .post a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>공차 주문 리스트</h2>
+
+    <div id="postList">
+    </div>
+
+    <script>
+        var posts = [
+            {
+                fname: "박",
+                lname: "승종",
+                star: "블랙 밀크티",
+                sweet: "45%",
+                pearl: "밀크폼펄"
+            },
+            {
+                fname: "이",
+                lname: "지은",
+                star: "타로 밀크티",
+                sweet: "30%",
+                pearl: "타피오카펄"
+            },
+            {
+                fname: "김",
+                lname: "민수",
+                star: "제주 그린 밀크티",
+                sweet: "60%",
+                pearl: "알로에펄"
+            },
+            {
+                fname: "장",
+                lname: "한윤",
+                star: "흑당 밀크티",
+                sweet: "45%",
+                pearl: "타피오카펄"
+            },
+            {
+                fname: "이",
+                lname: "민교",
+                star: "흑당 밀크티",
+                sweet: "60%",
+                pearl: "알로에펄"
+            }
+        ];
+
+        var postList = document.getElementById("postList");
+        for (var i = 0; i < posts.length; i++) {
+            var postData = posts[i];
+            var postHTML = `
+                <div class="post">
+                    <p>이름: ${postData.fname} ${postData.lname}, 음료: ${postData.star}, 당도: ${postData.sweet}, 펄: ${postData.pearl}</p>
+                    <a href="view.html">상세정보</a>
+                </div>
+            `;
+            postList.innerHTML += postHTML;
+        }
+    </script>
+
+    <form action="add.html">
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

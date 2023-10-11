@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Record</title>
+    <link rel="stylesheet" type="text/css" href="my.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            margin: 0;
+        }
+
+        #editForm {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #editForm h3 {
+            color: #007bff;
+        }
+
+        #editForm label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #editForm input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #editForm input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>수정사항</h2>
+
+<form id="editForm">
+    <h3>현재 정보</h3>
+    <p>
+        이름: 박 승종<br>
+        음료: 블랙 밀크티<br>
+        당도: 45%<br>
+        펄: 밀크폼펄
+    </p>
+
+    <h3>수정할 내용</h3>
+    <div>
+        <label for="fname">이름 (First Name):</label>
+        <input type="text" id="fname" name="fname" required>
+    </div>
+
+    <div>
+        <label for="lname">성 (Last Name):</label>
+        <input type="text" id="lname" name="lname" required>
+    </div>
+
+    <div>
+        <label for="star">음료 (음료):</label>
+        <input type="text" id="star" name="star" required>
+    </div>
+
+    <div>
+        <label for="sweet">당도 (Sweetness):</label>
+        <input type="text" id="sweet" name="sweet" required>
+    </div>
+
+    <div>
+        <label for="pearl">펄 (Toppings):</label>
+        <input type="text" id="pearl" name="pearl" required>
+    </div>
+
+    <input type="submit" value="수정">
+</form>
+
+</body>
+</html>

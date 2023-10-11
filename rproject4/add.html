@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공차 버블티 키오스크</title>
+    <style>
+        h2 {
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #confirmation {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>공차 버블티 키오스크</h2>
+    <form>
+        <label for="fname">성:</label><br>
+        <input type="text" id="fname" name="fname" value="박" required><br>
+        <label for="lname">이름:</label><br>
+        <input type="text" id="lname" name="lname" value="승종" required><br>
+    </form>
+    <form action="process_form.php" method="post">
+        <label for="birthday">생년월일:</label>
+        <input type="date" id="birthday" name="birthdate">
+    </form>
+    <form>
+        <p>성별을 고르시오</p>
+        <input type="radio" id="male" name="sex" value="남자">
+        <label for="male">남자</label>
+        <input type="radio" id="female" name="sex" value="여자">
+        <label for="female">여자</label><br>
+    </form>
+    <form action="/action_page.php">
+        <p>할인 수단을 고르시오</p>
+        <input type="checkbox" id="coupon1" name="coupon1" value="통신사 할인">
+        <label for="coupon1"> 통신사 할인</label><br>
+        <input type="checkbox" id="coupon2" name="coupon2" value="제휴카드 할인">
+        <label for="coupon2"> 제휴카드 할인</label><br>
+        <input type="checkbox" id="coupon3" name="coupon3" value="기타 쿠폰">
+        <label for="coupon3"> 기타 쿠폰 할인</label><br><br>
+    </form>
+    <form action="process_form.php" method="post">
+        <p>음료를 고르시오</p>
+        <select id="star" name="star">
+            <option value="12">블랙 밀크티</option>
+            <option value="34">타로 밀크티</option>
+            <option value="56">파스타치오 밀크티</option>
+            <option value="78">제주 그린 밀크티</option>
+            <option value="90">청포도 그린티</option>
+            <option value="10">망고 요구르트</option>
+        </select>
+    </form>
+    <form action="process_form.php" method="post">
+        <p>당도를 고르시오</p>
+        <select id="sweet" name="sweet">
+            <option value="15">15%</option>
+            <option value="30">30%</option>
+            <option value="45">45%</option>
+            <option value="60">60%</option>
+            <option value="75">75%</option>
+            <option value="90">90%</option>
+        </select>
+    </form>
+    <form action="process_form.php" method="post">
+        <p>펄을 고르시오</p>
+        <select id="pearl" name="pearl">
+            <option value="1">밀크폼펄</option>
+            <option value="2">타피오카펄</option>
+            <option value="3">코코넛펄</option>
+            <option value="4">알로에펄</option>
+            <option value="5">화이트펄</option>
+            <option value="6">치즈폼펄</option>
+        </select>
+    </form>
+    <form action="process_form.php" method="post">
+        <label for="message">추가 요청사항:</label><br>
+        <textarea id="message" name="user_message" rows="4" cols="50"></textarea>
+    </form>
+    <br><br>
+    <input type="submit" value="제출" onclick="showConfirmation()">
+    <input type="submit" value="취소">
+    <p id="confirmation"></p>
+</body>
+</html>
